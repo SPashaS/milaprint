@@ -112,7 +112,8 @@ function initSliders() {
 			// Подключаем модули слайдера
 			// для конкретного случая
 			//modules: [Navigation, Pagination],
-			modules: [Navigation, Pagination],
+			modules: [Navigation, Pagination, EffectFade],
+			effect: 'fade',
 			/*
 			effect: 'fade',
 			autoplay: {

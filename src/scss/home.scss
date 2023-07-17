@@ -2,7 +2,7 @@
 .wrapper {}
 
 .page {
-  padding-top: 50px;
+  padding-top: 59px;
   @media (min-width:$mobileSmall){
     padding-top: 90px;
   }
@@ -13,6 +13,8 @@
 }
 
 .promo {
+  padding-top: 0;
+  padding-bottom: 0;
   // .promo__container
 
   &__container {}
@@ -82,7 +84,7 @@
 
 
 .main-services {
-
+  padding-top: 15px;
   // .main-services__container
 
   &__container {
@@ -112,6 +114,11 @@
           opacity: 1;
         }
 
+      }
+    }
+    .touch & {
+      .main-services__title {
+        opacity: 1;
       }
     }
 
@@ -199,6 +206,15 @@
     @media (min-width:$mobile){
       & > *:nth-child(2n) {
         flex-direction: row-reverse;
+        & .our-services__item-body {
+          padding-left: 30px;
+        }
+      }
+
+      & > *:nth-child(2n+1) {
+        & .our-services__item-body {
+          padding-right: 30px;
+        }
       }
     }
     @media (min-width:$tablet){
@@ -216,15 +232,15 @@
     row-gap: 30px;
 
 
-    &:not(:last-child) {
-      margin-bottom: 30px;
-      @media (min-width:$tablet){
-        margin-bottom: 65px;
-      }
-    }
+    // &:not(:last-child) {
+    //   margin-bottom: 30px;
+    //   @media (min-width:$tablet){
+    //     margin-bottom: 65px;
+    //   }
+    // }
     @media (min-width:$mobile){
       flex-direction: row;
-      column-gap: 40px;
+      // column-gap: 40px;
       & > * {
         flex-basis: 50%;
       }
@@ -234,25 +250,35 @@
   // .our-services__item-body
 
   &__item-body {
-    text-align: left;
+    text-align: center;
+    padding-bottom: 40px;
+    @media (min-width:$mobile){
+      text-align: left;
+      padding-bottom: 20px;
+    }
   }
 
   // .our-services__item-title
 
   &__item-title {
+    font-weight: 600;
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    text-align: left;
   }
 
   // .our-services__item-text-block
 
   &__item-text-block {
     margin-bottom: 2rem;
+    text-align: left;
   }
 
   // .our-services__button
 
-  &__button {}
+  &__button {
+    
+  }
 
   // .our-services__item-image
 
@@ -397,6 +423,9 @@
   &__slider-wrapper {
     width: 100%;
     @media (min-width:$mobileSmall){
+      
+    }
+    @media (min-width:$tablet){
       max-width: 70%;
       margin: auto;
     }
@@ -413,11 +442,19 @@
   // .our-works__slide
 
   &__slide {
-    
+    width: 100%;
+    padding-bottom: 60%;
+    position: relative;
   }
 
   &__slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   } 
 
   // .our-works__navigation
